@@ -1,0 +1,9 @@
+Thịnh:
+- 3.1: Tất cả
+- 3.2: Exploring Credit in Germany data set
+- 3.3: 4 câu đầu
+
+Quân:
+- 3.1: Không làm
+- 3.2: 2 data set còn lại
+- 3.3: 4 câu sau
