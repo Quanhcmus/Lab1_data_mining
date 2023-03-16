@@ -1,4 +1,30 @@
 
+# Information of the group
+
+1. Link github: [https://github.com/Quanhcmus/Lab1_data_mining](https://github.com/Quanhcmus/Lab1_data_mining)
+2. Group member information
+   |ID|FULL NAME|EMAIL|
+   |--|---------|-----|
+   |20120554|Nguyễn Minh Quân|20120554@student.hcmus.edu.vn|
+   |20120587|Nguyễn Hoàng Thịnh|20120587@student.hcmus.edu.vn|
+3. The contribution rate of each member
+   - 20120554:
+      + 3.1: Install WEKA ( Requirement 1) (100%)
+      + 3.2.1: Exploring Breast Cancer data set (100%)
+      + 3.2.2: Exploring Weather data set (100%)
+      + 3.3.5: Deleting columns containing more than a particular number of missing values (0%)
+      + 3.3.6: Delete duplicate samples. (0%)
+      + 3.3.7: Normalize a numeric attribute using min-max and Z-score methods. (0%)
+      + 3.3.8: Performing addition, subtraction, multiplication, and division between two numerical attributes (0%)
+   - 20120587: 
+      + 3.1 : Install WEKA ( Requirement 1+2) (0%)
+      + 3.2.3: Exploring Credit in Germany data set (0%)
+      + 3.3.1: Extract columns with missing values (0%)
+      + 3.3.2: Count the number of lines with missing data (0%)
+      + 3.3.3: Fill in the missing value using mean, median (for numeric properties) and mode (for the categorical attribute). (0%)
+      + 3.3.4: Deleting rows containing more than a particular number of missing values (0%)
+  
+   **Total task completed:** 100%
 
 # Preprocessing and data mining
 
@@ -6,7 +32,7 @@
 
 ### Requirement 1:
   - 20120554 ![Image 1](Images/20120554.png)
-  - 20120563 ![Image 2](Images/20120554.png)
+  - 20120587 ![Image 2](Images/20120554.png)
 
 ### Requirement 2:
   - **Current Relation**: abcd
@@ -58,3 +84,35 @@
      + We can setting title chart is stacked bar chart
      + Red represents the patients recurrence-events
      + Blue represents the patients no-recurrence-events
+
+### Exploring Weather data set
+   - Load the data file **weather.numeric.arf** ![Weather](Images/Weather_load.png)
+   - **How many attributes does this data set have? How many samples? Which attributes have data type categorical? Which attributes have a data type that is numerical? Which attribute is used for the label?**
+      + There are **5** attributes, **14** samples in this data set 
+      ![weather 1.1](Images/Weather_11.png)
+      + Attributes have data type categorical is **outlook**, **windy** and **play**
+      + Attributes have data type numerical is **temperature** and **humudity**
+      + Attributes used for the label is **play**
+      ![weather 1.2](Images/Weather_12.png)
+   - **Let’s list **five-number summary** of two attributes *temperature* and *humidity*. Does WEKA provide these values?**
+      | | Min | Q1 | Median | Q3 | Max |
+      |-|-----|----|--------|----|-----|
+      |temperature| 64 | 69.25 | 72 | 78.75 | 85 |
+      |humidity| 65 | 71.25 | 82.5 | 90 | 96 |
+      + WEKA don't provide these values
+   - **Let’s explain the meaning of all charts in the WEKA Explorer. Setting the title for it and describing its legend.**
+      + All chart
+      ![weather 2.2](Images/Weather_22.png)
+      + The graph shows the data distribution of the attributeThe graph shows the data distribution of the attribute
+      + The title for it could be "Distribution chart"
+      + Blue is no
+      + Red is yes
+   - **Let’s move to the Visualize tag. What’s the name of this chart? Do you think there are any pairs of different attributes that have correlated?**
+      + Chart in Visualize tag
+      ![weather 3.1](Images/Weather_31.png)
+      + The name of this chart is scatter plot of attributes
+      + We think humidity and play are correlated
+
+### Exploring Credit in Germany data set
+
+## Preprocessing Data in Python (5 points)
