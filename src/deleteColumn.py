@@ -34,7 +34,6 @@ class deleteColumn():
         for i in range(len(listColumnDelete)):
             self.contents = [','.join(line.split(',')[:listColumnDelete[i]-i] + line.split(',')[(listColumnDelete[i]-i)+1:]) for line in self.contents]
     def writeFile(self):
-        contents=self.deteleColumn()
         with open('output/deleteColumn.csv','w') as f:
             for line in self.contents:
                 f.write(line)
