@@ -17,7 +17,7 @@
       + 3.3.7: Normalize a numeric attribute using min-max and Z-score methods. (0%)
       + 3.3.8: Performing addition, subtraction, multiplication, and division between two numerical attributes (0%)
    - 20120587: 
-      + 3.1 : Install WEKA ( Requirement 1+2) (0%)
+      + 3.1 : Install WEKA ( Requirement 1+2) (100%)
       + 3.2.3: Exploring Credit in Germany data set (0%)
       + 3.3.1: Extract columns with missing values (0%)
       + 3.3.2: Count the number of lines with missing data (0%)
@@ -30,21 +30,34 @@
 
 ## Install WEKA (0.5 points)
 
-### Requirement 1:
+### Requirement 1: Capturing a screen.
   - 20120554 ![Image 1](Images/20120554.png)
-  - 20120587 ![Image 2](Images/20120554.png)
+  - 20120587 ![Image 2](Images/20120587.png)
 
-### Requirement 2:
-  - **Current Relation**: abcd
-  - **Attributes**: abcd
-  - **Selected Attributes**: abcd
-  - **Preprocess**: abcd
-  - **More**: abcd 
+### Requirement 2: Explaining the meaning.
+- **Preprocess** tag:
+  - Current Relation: 
+      - Relation: Refers to the name of the current dataset being processed.
+      - Attributes: The number of attributes.
+      - Instances: The number of rows.
+      - Sum of weights: The total weight of instances.
+  - Attributes: Specify a subset of attributes that should be used for subsequent processing.
+      - All: Selects all attributes.
+      - None: Unselects all attributes.
+      - Invert: Inverts the current attribute selection.
+      - Pattern: Selects all attributes that match a reg. expression.
+  - Selected Attributes: Specify a single attribute that should be used for subsequent processing and have some information like Name, Type, Missing, Distinct, Unique.
+- **Classify** tag: Uses machine learning algorithm to predict the class label of a data instance based on its input attributes.
+- **Cluster** tag: Uses machine learning algorithm to group data instances into clusters based on their similarity.
+- **Associate** tag: Uses machine learning algorithm to discover association rules from data.
+- **Select attributes** tag: Specify the set of attributes to be used for a particular task, such as classification or clustering. This tag is typically used in conjunction with other tags, such as the Classifier or Cluster tags.
+- **Visualize** tag: Specify a visualization method for the results of an analysis and help users understand the patterns and relationships in the data
+
 
 ## Getting Acquainted with WEKA (4.5 points)
 
 ### Exploring Breast Cancer data set
-  - Load the data file **breast cancer.arf** ![cancer dataset](Images/load-breast-cancer-dataset.png)
+  - Load the data file **breast cancer.arff** ![cancer dataset](Images/load-breast-cancer-dataset.png)
   - **How many instances does this data set have?**
   There are 286 instances in this dataset
   ![Breast cancer 1](Images/Breast_cancer_1.png)
@@ -86,7 +99,7 @@
      + Blue represents the patients no-recurrence-events
 
 ### Exploring Weather data set
-   - Load the data file **weather.numeric.arf** ![Weather](Images/Weather_load.png)
+   - Load the data file **weather.numeric.arff** ![Weather](Images/Weather_load.png)
    - **How many attributes does this data set have? How many samples? Which attributes have data type categorical? Which attributes have a data type that is numerical? Which attribute is used for the label?**
       + There are **5** attributes, **14** samples in this data set 
       ![weather 1.1](Images/Weather_11.png)
@@ -114,5 +127,10 @@
       + We think humidity and play are correlated
 
 ### Exploring Credit in Germany data set
+   - Load the data file **credit-g.arf** ![Germany Credit](Images/load-german-credit.png)
+   - **What is the content of the comments section in credit-g.arff (when opened with any text editor) about? How many samples does the data set have? How many attributes? Describe any five
+attributes (must have both discrete and continuous attributes).**
+      + The content of the comments section (when opened with any text editor): Description of the German credit dataset. Included: Title, Source Information, Number of Instances,etc.
+      ![germany credit 1.1](Images/German_Credit_11.png)
 
 ## Preprocessing Data in Python (5 points)
