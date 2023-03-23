@@ -1,11 +1,10 @@
-import csv
-
+import sys
 class deleteDuplicate():
     
     def __init__(self,pathFileName:str):
         self.contents=self.readFile(pathFileName)
         
-    
+        
     @staticmethod
     def readFile(fileName):
         with open(fileName,'r') as f:
@@ -22,7 +21,6 @@ class deleteDuplicate():
                 rowUnique.append(self.contents[i])
         for i in range(len(indexDuplicate)):
             del self.contents[indexDuplicate[i]-i]
-        print(indexDuplicate)
         return len(indexDuplicate)
     
     def writeFile(self):
@@ -31,3 +29,6 @@ class deleteDuplicate():
             for line in self.contents:
                 f.write(line)
         print(amountRow,'templates have been deleted')
+
+instance=deleteDuplicate(sys.argv[1])
+instance.writeFile()

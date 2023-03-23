@@ -1,4 +1,4 @@
-
+import sys
 class deleteColumn():
 
     def __init__(self,pathFileName:str):
@@ -33,8 +33,13 @@ class deleteColumn():
                 listColumnDelete.append(i)
         for i in range(len(listColumnDelete)):
             self.contents = [','.join(line.split(',')[:listColumnDelete[i]-i] + line.split(',')[(listColumnDelete[i]-i)+1:]) for line in self.contents]
+            return len(listColumnDelete)
     def writeFile(self):
+        countColumnDetele=self.deteleColumn()
         with open('output/deleteColumn.csv','w') as f:
             for line in self.contents:
                 f.write(line)
-        print('deleted columns as required and wrote to file "deleteColumn.csv"')
+        print('deleted',countColumnDetele,'columns with the number of missing values is more than 50% of the number of samples')
+
+instance=deleteColumn(sys.argv[1])
+instance.writeFile()
