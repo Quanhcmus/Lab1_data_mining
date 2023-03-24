@@ -2,7 +2,7 @@ import sys
 class deleteDuplicate():
     
     def __init__(self,pathFileName:str):
-        self.contents=self.readFile(pathFileName)
+        self.contents= self.readFile(pathFileName)
         
         
     @staticmethod

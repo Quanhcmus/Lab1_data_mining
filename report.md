@@ -128,9 +128,94 @@
 
 ### Exploring Credit in Germany data set
    - Load the data file **credit-g.arf** ![Germany Credit](Images/load-german-credit.png)
-   - **What is the content of the comments section in credit-g.arff (when opened with any text editor) about? How many samples does the data set have? How many attributes? Describe any five
-attributes (must have both discrete and continuous attributes).**
+   - **What is the content of the comments section in credit-g.arff (when opened with any text editor) about? How many samples does the data set have? How many attributes? Describe any fiveattributes (must have both discrete and continuous attributes).**
       + The content of the comments section (when opened with any text editor): Description of the German credit dataset. Included: Title, Source Information, Number of Instances,etc.
       ![germany credit 1.1](Images/German_Credit_11.png)
+      + The data set have 1000 samples
+      + The data set have 21 attributes
+      ![germany credit 1.2](Images/German_Credit_12.png)
+      + Describe any five attributes:
+         + checking_status (Discrete attribute): Status of existing checking account. Missing: 0%, Distinct: 4, Type: Nominal, Unique: 0%.
+         ![germany credit 1.3](Images/German_Credit_13.png) 
+         + duration (Continuous attribute): Duration in month. Missing: 0%, Distinct: 33, Type: Numeric, Unique: 5(1%).
+         ![germany credit 1.4](Images/German_Credit_14.png)
+         + credit_history (Discrete attribute): Credit history. Missing: 0%, Distinct: 5, Type: Nominal, Unique: 0%.
+         ![germany credit 1.5](Images/German_Credit_15.png)
+         + purpose (Discrete attribute): Purpose.
+Missing: 0%, Distince: 10, Type: Nominal, Unique: 0%.
+         ![germany credit 1.6](Images/German_Credit_16.png)
+         + credit_amount (Continuous attribute): Credit amount.
+Missing: 0%, Distinct: 921, Type: Numeric, Unique: 847(85%).
+         ![germany credit 1.7](Images/German_Credit_17.png)
+   - **Which attribute is used for the label?**
+     **=>class** is used for the label.
+      ![germany credit 2.1](Images/German_Credit_21.png)
+   - **Let’s describe the distribution of continuous attributes? (Left skewed or right skewed ?)**
+     **=>** Contrinous attributes: **duration**, **credit_amount**, **installment_commitment**, **residence_since**, **age**, **existing_credits**, **num_dependents**.
+      + **duration**: Right skewed.
+      ![germany credit 3.1](Images/German_Credit_31.png) 
+      + **credit_amount**: Right skewed.
+      ![germany credit 3.2](Images/German_Credit_32.png)
+      + **installment_commitment**: Right skewed.
+      ![germany credit 3.3](Images/German_Credit_33.png)
+      + **residence_since**: Right skewed.
+      ![germany credit 3.4](Images/German_Credit_34.png)
+      + **age**: Right skewed.
+      ![germany credit 3.5](Images/German_Credit_35.png)
+      + **existing_credits**: Right skewed.
+      ![germany credit 3.6](Images/German_Credit_36.png)
+      + **num_dependents**: Right skewed.
+      ![germany credit 3.7](Images/German_Credit_37.png)
+   - **Let’s explain the meaning of all charts in the WEKA Explorer. Setting the title for it and describing its legend.**
+   **=>** Having 4 charts in the WEKA Explorer: 
+      - The first chart: 
+      ![germany credit 4.1](Images/German_Credit_41.png)
+         - Explaining: It shows the bar chart with different colors correspond to each label at nominal attributes.
+         - Setting the title for it: Own chart of nominal attribute.
+         - Describing its legend: Each color corresponds to each label of nominal attribute.
+      - The second chart: 
+      ![germany credit 4.2](Images/German_Credit_42.png)
+         - Explaining: It shows the bar chart with one color (Black) about the relationship from nominal attribute (no attribute) to numeric attribute and because the numeric attribute don't have label so it is only one color.
+         - Setting the title for it: Chart from nominal(no class) to numeric. 
+         - Describing its legend: Black shows value of numeric attribute.
+      - The third chart: 
+      ![germany credit 4.3](Images/German_Credit_43.png)
+         - Explaining: It shows the stacked bar chart about the relationship from nominal attribute to different nominal attribute.
+         - Setting the title for it: Chart from nominal to nominal.
+         - Describing its legend: Each color corresponds to labels of the nominal attribute be chosen in "Attributes" (On the left)
+      - The fourth chart: 
+      ![germany credit 4.4](Images/German_Credit_44.png)
+        - Explaining: It shows the bar chart having only the range of value in numeric attribute.
+        - Setting the title for it: Chart for numeric
+        - Describing its legend: Don't have legend.
+   - **Let’s move to the Select attributes tag. Describe all of the options for attribute selection.**
+     **=>** Having 11 options for Attribute Evaluator and 3 options for Search Method.
+      - Attribute Evaluator:
+         - **CfsSubsetEval**: Evaluates the worth of a subset of attributes by considering the individual predictive ability of each feature along with the degree of redundancy between them.
+         - **ClassifierAttributeEval**: Evaluates the worth of an attribute by using a user-specified classifier.
+         - **ClassifierSubsetEval**: Evaluates attribute subsets on training data or a separate hold out testing set.
+         - **CorrelationAttributeEval**: Evaluates the worth of an attribute by measuring the correlation (Pearson's) between it and the class.
+         - **GainRadioAttributeEval**: Evaluates the worth of an attribute by measuring the gain ratio with respect to the class.
+         - **InfoGainAttributeEval**: Evaluates the worth of an attribute by measuring the information gain with respect to the class.
+         - **OneRAttributeEval**: Evaluates the worth of an attribute by using the OneR classifier.
+         - **PrincipalComponents**: Performs a principal components analysis and transformation of the data.
+         - **ReliefFAttributeEval**: Evaluates the worth of an attribute by repeatedly sampling an instance and considering the value of the given attribute for the nearest instance of the same and different class.
+         - **SymmetricalUncertAttributeEval**: Evaluates the worth of an attribute by measuring the symmetrical uncertainty with respect to the class.
+         - **WrapperSubsetEval**: Evaluates attribute sets by using a learning scheme.
+      - Search Method:
+         - **BestFirst**: Searches the space of attribute subsets by greedy hillclimbing augmented with a backtracking facility.
+         - **GreedyStepwise**: Performs a greedy forward or backward search through the space of attribute subsets.
+         - **Ranker**: Ranks attributes by their individual evaluations.
+   - **Which options should be used to select the 5 attributes with the highest correlation?(Step-by-step description, with step-by-step photos and final results)** **=>** The options should be used are **CorrelationAttributeEval**, **InfoGainAttributeEval**, **ReliefFAttributeEval** or **PrincipalComponents**, etc. 
+   <br>- For example with **CorrelationAttributeEval**: 
+      - Step 1: Click on the "Choose" button in "Attribute Evalutor" and click on "CorrelationAttributeEval".
+      ![germany credit 6.1](Images/German_Credit_61.png)
+      - Step 2: Click on the "Ranker" in "Search Method" (Ranker is defaulted to choose when choosing "CorrelationAttributeEval")
+      and set numToSelect to 5, after that click on the "OK" button.
+      ![germany credit 6.2](Images/German_Credit_62.png)
+      - Step 3: Click on the "Start" button to run the filter. The output will display the 5 attributes with the highest correlation. (Note: Choose the right list in result lists)
+      ![germany credit 6.3](Images/German_Credit_63.png)
+      - The final result: 
+      ![germany credit 6.4](Images/German_Credit_64.png)
 
 ## Preprocessing Data in Python (5 points)
