@@ -29,6 +29,7 @@ class deleteDuplicate():
             for line in self.contents:
                 f.write(line)
         print(amountRow,'templates have been deleted')
+        print('Writed in output/deleteDuplicate.csv')
 
 instance=deleteDuplicate(sys.argv[1])
 instance.writeFile()

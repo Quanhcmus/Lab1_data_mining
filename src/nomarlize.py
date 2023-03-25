@@ -93,6 +93,7 @@ class Nomarlize():
                     for row in self.contents:
                         writer.writerow(row)
             print("Normalized a numeric attribute using min-max")
+            print('Writed in output/nomarlize_min-max.csv file')
         elif self.type=='z-score':
             self.zScore()
             with open('output/nomarlize_z-score.csv','w',newline='') as file:
@@ -100,6 +101,7 @@ class Nomarlize():
                     for row in self.contents:
                         writer.writerow(row)
             print("Normalized a numeric attribute using z-score")
+            print('Writed in output/nomarlize_z-score.csv file')
                     
 instance=Nomarlize(sys.argv[1],sys.argv[2])
 instance.writeFile()

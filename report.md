@@ -12,10 +12,10 @@
       + 3.1: Install WEKA ( Requirement 1) (100%)
       + 3.2.1: Exploring Breast Cancer data set (100%)
       + 3.2.2: Exploring Weather data set (100%)
-      + 3.3.5: Deleting columns containing more than a particular number of missing values (0%)
-      + 3.3.6: Delete duplicate samples. (0%)
-      + 3.3.7: Normalize a numeric attribute using min-max and Z-score methods. (0%)
-      + 3.3.8: Performing addition, subtraction, multiplication, and division between two numerical attributes (0%)
+      + 3.3.5: Deleting columns containing more than a particular number of missing values (100%)
+      + 3.3.6: Delete duplicate samples. (100%)
+      + 3.3.7: Normalize a numeric attribute using min-max and Z-score methods. (100%)
+      + 3.3.8: Performing addition, subtraction, multiplication, and division between two numerical attributes (100%)
    - 20120587: 
       + 3.1 : Install WEKA ( Requirement 1+2) (100%)
       + 3.2.3: Exploring Credit in Germany data set (0%)
@@ -219,3 +219,27 @@ Missing: 0%, Distinct: 921, Type: Numeric, Unique: 847(85%).
       ![germany credit 6.4](Images/German_Credit_64.png)
 
 ## Preprocessing Data in Python (5 points)
+The program must have the following functions (0.5 points for each function):
+### Extract columns with missing values
+
+### Count the number of lines with missing data.
+
+### Fill in the missing value using mean, median (for numeric properties) and mode (for the categorical attribute).
+
+### Deleting rows containing more than a particular number of missing values (Example: delete rows with the number of missing values is more than 50% of the number of attributes).
+
+### Deleting columns containing more than a particular number of missing values (Example: delete columns with the number of missing values is more than 50% of the number of samples).
+   + Run file **deleteColumn.py**: ![deleteColumn](Images/deleteColumn.png)
+
+###  Delete duplicate samples.
+   + Run file **deleteDuplicate.py**: ![deleteDuplicate](Images/deleteDuplicate.png)
+
+### Normalize a numeric attribute using min-max and Z-score methods
+   + Run file **nomarlize.py** with min-max score: ![min-max](Images/nomarlizeMinmax.png)
+   + Run file **nomarlize.py** with z-score: ![z-score](Images/nomarlizeZscore.png)
+
+### Performing addition, subtraction, multiplication, and division between two numerical attributes
+   + Run file **calculation** with add column 3 and 4: ![add](Images/calc_add.png)
+   + Run file **calculation** with sub column 3 and 4: ![sub](Images/calc_sub.png)
+   + Run file **calculation** with mul column 3 and 4: ![mul](Images/calc_mul.png)
+   + Run file **calculation** with div column 3 and 4: ![div](Images/calc_div.png)

@@ -39,7 +39,8 @@ class deleteColumn():
         with open('output/deleteColumn.csv','w') as f:
             for line in self.contents:
                 f.write(line)
-        print('deleted',countColumnDetele,'columns with the number of missing values is more than 50% of the number of samples')
+        print('Deleted',countColumnDetele,'columns with the number of missing values is more than 50% of the number of samples')
+        print('Writed in output/deleteColumn.csv file')
 
 instance=deleteColumn(sys.argv[1])
 instance.writeFile()
