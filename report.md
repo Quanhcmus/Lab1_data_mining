@@ -18,11 +18,11 @@
       + 3.3.8: Performing addition, subtraction, multiplication, and division between two numerical attributes (100%)
    - 20120587: 
       + 3.1 : Install WEKA ( Requirement 1+2) (100%)
-      + 3.2.3: Exploring Credit in Germany data set (0%)
-      + 3.3.1: Extract columns with missing values (0%)
-      + 3.3.2: Count the number of lines with missing data (0%)
-      + 3.3.3: Fill in the missing value using mean, median (for numeric properties) and mode (for the categorical attribute). (0%)
-      + 3.3.4: Deleting rows containing more than a particular number of missing values (0%)
+      + 3.2.3: Exploring Credit in Germany data set (100%)
+      + 3.3.1: Extract columns with missing values (100%)
+      + 3.3.2: Count the number of lines with missing data (100%)
+      + 3.3.3: Fill in the missing value using mean, median (for numeric properties) and mode (for the categorical attribute). (100%)
+      + 3.3.4: Deleting rows containing more than a particular number of missing values (100%)
   
    **Total task completed:** 100%
 
@@ -220,25 +220,52 @@ Missing: 0%, Distinct: 921, Type: Numeric, Unique: 847(85%).
 
 ## Preprocessing Data in Python (5 points)
 The program must have the following functions (0.5 points for each function):
-### Extract columns with missing values
-
-### Count the number of lines with missing data.
-
-### Fill in the missing value using mean, median (for numeric properties) and mode (for the categorical attribute).
-
-### Deleting rows containing more than a particular number of missing values (Example: delete rows with the number of missing values is more than 50% of the number of attributes).
-
-### Deleting columns containing more than a particular number of missing values (Example: delete columns with the number of missing values is more than 50% of the number of samples).
+### **1. Extract columns with missing values**
+   + Run file **list-missing.py**: 
+   ![list-missing 1.1](Images/listmissing_11.png)
+   + (Test case) Look at Excel to check it more clearly
+   ![list-missing 1.2](Images/listmissing_12.png)
+### **2. Count the number of lines with missing data.**
+   + Run file **count-missing-lines.py**: 
+   ![count missing lines 2.1](Images/count_ml_21.png)
+   + (Test case) Using pandas to check result:
+   ![count missing lines 2.2](Images/count_ml_22.png)
+### **3. Fill in the missing value using mean, median (for numeric properties) and mode (for the categorical attribute).**
+   + Run file **impute.py**: 
+   ![impute 3.1](Images/impute_31.png)
+   => Result: 
+      + In terminal: ![impute 3.2](Images/impute_32.png)
+      + In excel: ![impute 3.3](Images/impute_33.png)
+   + (Test case)
+      + Test case 1: (Mean with 2 attributes)
+      ![impute 3.4](Images/impute_34.png)
+      => Result in excel: (Because the column "MSSubclass doesn't have missing values so it don't change anything)
+      ![impute 3.5](Images/impute_35.png)
+      + Test case 2: (Median with 1 attribute)
+      ![impute 3.6](Images/impute_36.png)
+      => Result in excel: 
+      ![impute 3.7](Images/impute_37.png)
+      + Test case 3: (Mode with 2 attributes)
+      ![impute 3.8](Images/impute_38.png)
+      => Result in excel: 
+      ![impute 3.9](Images/impute_39.png)
+### **4. Deleting rows containing more than a particular number of missing values (Example: delete rows with the number of missing values is more than 50% of the number of attributes).**
+   + Run file **deleteRow.py**: 
+   ![deleteRow 4.1](Images/deleterow_41.png)
+   ![deleteRow 4.2](Images/deleterow_42.png)
+   + (Test case): Using Pandas to check result: (Having 307 columns like the image above (The index in excel starts at 1 so the end line is 308)
+   ![deleteRow 4.3](Images/deleterow_43.png)
+### **5. Deleting columns containing more than a particular number of missing values (Example: delete columns with the number of missing values is more than 50% of the number of samples).**
    + Run file **deleteColumn.py**: ![deleteColumn](Images/deleteColumn.png)
 
-###  Delete duplicate samples.
+###  **6. Delete duplicate samples.**
    + Run file **deleteDuplicate.py**: ![deleteDuplicate](Images/deleteDuplicate.png)
 
-### Normalize a numeric attribute using min-max and Z-score methods
+### **7. Normalize a numeric attribute using min-max and Z-score methods**
    + Run file **nomarlize.py** with min-max score: ![min-max](Images/nomarlizeMinmax.png)
    + Run file **nomarlize.py** with z-score: ![z-score](Images/nomarlizeZscore.png)
 
-### Performing addition, subtraction, multiplication, and division between two numerical attributes
+### **8. Performing addition, subtraction, multiplication, and division between two numerical attributes**
    + Run file **calculation** with add column 3 and 4: ![add](Images/calc_add.png)
    + Run file **calculation** with sub column 3 and 4: ![sub](Images/calc_sub.png)
    + Run file **calculation** with mul column 3 and 4: ![mul](Images/calc_mul.png)

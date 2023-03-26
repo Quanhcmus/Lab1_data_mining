@@ -12,7 +12,7 @@ class list_missing():
         headers = self.dataset[0]
         missing_columns = []
         for i in range(len(headers)):
-            col = [row[i] for row in self.dataset[1:]]
+            col = [row[i] for row in self.dataset]
             if '' in col:
                 missing_columns.append(i)
         result = [[row[i] for i in missing_columns] for row in self.dataset]
@@ -20,10 +20,11 @@ class list_missing():
     
     def writeFile(self):
         result = self.extract()
-        with open('test.csv','w') as f:
+        with open('output/list_missing.csv','w') as f:
             for row in result:
                 f.write(','.join(row) + '\n')
         
-instance = list_missing(sys.argv[1])
-print(instance.extract())
-instance.writeFile()
+list_mv_cols = list_missing(sys.argv[1])
+print("List columns with missing value: \n")
+print(list_mv_cols.extract())
+list_mv_cols.writeFile()

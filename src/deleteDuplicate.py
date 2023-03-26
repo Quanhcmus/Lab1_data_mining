@@ -4,7 +4,6 @@ class deleteDuplicate():
     def __init__(self,pathFileName:str):
         self.contents= self.readFile(pathFileName)
         
-        
     @staticmethod
     def readFile(fileName):
         with open(fileName,'r') as f:

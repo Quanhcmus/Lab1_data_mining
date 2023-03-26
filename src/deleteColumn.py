@@ -1,10 +1,12 @@
 import sys
 class deleteColumn():
 
-    def __init__(self,pathFileName:str):
+
+    def __init__(self,pathFileName:str,percent):
         self.contents=self.readFile(pathFileName)
         self.amountInstances=self.countInstances()
         self.amountAttributes=self.countAttributes()
+        self.percent=float(percent)
     @staticmethod
     def readFile(fileName):
         with open(fileName,'r') as f:
@@ -29,7 +31,7 @@ class deleteColumn():
         # get the column to delete
         listColumnDelete=[]
         for i in range(len(listCountMissing)):
-            if listCountMissing[i]>500:
+            if listCountMissing[i]>self.percent*self.amountInstances:
                 listColumnDelete.append(i)
         for i in range(len(listColumnDelete)):
             self.contents = [','.join(line.split(',')[:listColumnDelete[i]-i] + line.split(',')[(listColumnDelete[i]-i)+1:]) for line in self.contents]
@@ -39,8 +41,8 @@ class deleteColumn():
         with open('output/deleteColumn.csv','w') as f:
             for line in self.contents:
                 f.write(line)
-        print('Deleted',countColumnDetele,'columns with the number of missing values is more than 50% of the number of samples')
+        print('Deleted',countColumnDetele,'columns with the number of missing values is more than','{}%'.format(self.percent*100),'of the number of samples')
         print('Writed in output/deleteColumn.csv file')
 
-instance=deleteColumn(sys.argv[1])
+instance=deleteColumn(sys.argv[1],sys.argv[2])
 instance.writeFile()
