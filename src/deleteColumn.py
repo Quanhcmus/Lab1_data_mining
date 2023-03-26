@@ -1,6 +1,7 @@
 import sys
 class deleteColumn():
 
+
     def __init__(self,pathFileName:str,percent):
         self.contents=self.readFile(pathFileName)
         self.amountInstances=self.countInstances()
@@ -40,7 +41,7 @@ class deleteColumn():
         with open('output/deleteColumn.csv','w') as f:
             for line in self.contents:
                 f.write(line)
-        print('Deleted',countColumnDetele,'columns with the number of missing values is more than','{}%'.format(self.percent*100)+'of the number of samples')
+        print('Deleted',countColumnDetele,'columns with the number of missing values is more than','{}%'.format(self.percent*100),'of the number of samples')
         print('Writed in output/deleteColumn.csv file')
 
 instance=deleteColumn(sys.argv[1],sys.argv[2])
