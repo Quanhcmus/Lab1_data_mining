@@ -25,5 +25,6 @@ class list_missing():
                 f.write(','.join(row) + '\n')
         
 list_mv_cols = list_missing(sys.argv[1])
+print("List columns with missing value: \n")
 print(list_mv_cols.extract())
 list_mv_cols.writeFile()
