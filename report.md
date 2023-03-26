@@ -18,11 +18,11 @@
       + 3.3.8: Performing addition, subtraction, multiplication, and division between two numerical attributes (100%)
    - 20120587: 
       + 3.1 : Install WEKA ( Requirement 1+2) (100%)
-      + 3.2.3: Exploring Credit in Germany data set (0%)
-      + 3.3.1: Extract columns with missing values (0%)
-      + 3.3.2: Count the number of lines with missing data (0%)
-      + 3.3.3: Fill in the missing value using mean, median (for numeric properties) and mode (for the categorical attribute). (0%)
-      + 3.3.4: Deleting rows containing more than a particular number of missing values (0%)
+      + 3.2.3: Exploring Credit in Germany data set (100%)
+      + 3.3.1: Extract columns with missing values (100%)
+      + 3.3.2: Count the number of lines with missing data (100%)
+      + 3.3.3: Fill in the missing value using mean, median (for numeric properties) and mode (for the categorical attribute). (100%)
+      + 3.3.4: Deleting rows containing more than a particular number of missing values (100%)
   
    **Total task completed:** 100%
 
